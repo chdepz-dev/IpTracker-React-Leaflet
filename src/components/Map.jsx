@@ -13,7 +13,7 @@ const Map = ({ data }) => {
       {data && (
         <MapContainer
           center={position}
-          zoom={20}
+          zoom={15}
           scrollWheelZoom={true}
           className="mapContainer"
           zoomControl={false}>

@@ -3,11 +3,10 @@ import "./App.css";
 import Map from "./components/Map";
 import config from "./config/config";
 
-
 function App() {
   const [ip, setIp] = useState(null);
   const [ipAddress, setIpAddress] = useState("");
-// console.log(ip)
+  // console.log(ip);
   const initialData = async () => {
     const response = await fetch("https://api.ipregistry.co", {
       method: "GET",
@@ -33,8 +32,7 @@ function App() {
       try {
         const searchData = async () => {
           const response = await fetch(
-            `https://api.ipregistry.co/${ipAddress}`,
-            {
+            `https://api.ipregistry.co?${ipAddress}`,{
               method: "GET",
               headers: {
                 Authorization: `ApiKey ${config.ip_registry_key}`,
@@ -66,7 +64,7 @@ function App() {
               type="text"
               placeholder="search any ip address"
               value={ipAddress}
-              onChange={ (e) => setIpAddress(e.target.value)}
+              onChange={(e) => setIpAddress(e.target.value)}
             />
             <button type="submit">Search</button>
           </form>
@@ -78,7 +76,9 @@ function App() {
               </div>
               <div className="location">
                 <h3>LOCATION</h3>
-                <h5>{ip.location.country.name}, {ip.location.city} {ip.postal}</h5>
+                <h5>
+                  {ip.location.country.name}, {ip.location.city} {ip.postal}
+                </h5>
               </div>
               <div className="timezone">
                 <h3>TIMEZONE</h3>
@@ -86,12 +86,16 @@ function App() {
               </div>
               <div className="isp">
                 <h3>ISP</h3>
-                <h5>{ip.connection.domain}, {ip.connection.organization}</h5>
+                <h5>
+                  {ip.connection.domain}, {ip.connection.organization}, 600MBPS
+                </h5>
               </div>
 
               <div className="browser">
                 <h3>User Agent</h3>
-                <h5>{ip.user_agent.name} {ip.user_agent.type}</h5>
+                <h5>
+                  {ip.user_agent.name} {ip.user_agent.type}
+                </h5>
               </div>
             </div>
           )}
