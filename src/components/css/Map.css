@@ -1,0 +1,20 @@
+@import "leaflet/dist/leaflet.css";
+.leaflet-container {
+  position: fixed;
+  width: 100%;
+  height: 70vh;
+}
+body{
+    overflow-x: hidden;
+}
+
+.map{
+    /* width: 100%;
+    border: 2px solid black; */
+    }
+    
+    .mapContainer{
+    z-index: 0;
+    width: 100%;
+position: relative;
+}
