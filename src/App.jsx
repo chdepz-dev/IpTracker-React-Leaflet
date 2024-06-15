@@ -87,7 +87,7 @@ function App() {
               <div className="isp">
                 <h3>ISP</h3>
                 <h5>
-                  {ip.connection.domain}, {ip.connection.organization}
+                  {ip.connection.domain}, {ip.connection.organization}, 600/MBPS
                 </h5>
               </div>
 
