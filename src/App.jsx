@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Map from "./components/Map";
-import config from "./config/config";
+
 
 function App() {
-  // console.log(import.meta.env.VITE_ip_registry_Key)
+  console.log(import.meta.env.VITE_ip_registry_Key)
   const [ip, setIp] = useState(null);
   const [ipAddress, setIpAddress] = useState("");
   const initialData = async () => {
