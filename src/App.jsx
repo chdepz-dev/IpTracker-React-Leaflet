@@ -4,14 +4,14 @@ import Map from "./components/Map";
 import config from "./config/config";
 
 function App() {
+  // console.log(import.meta.env.VITE_ip_registry_Key)
   const [ip, setIp] = useState(null);
   const [ipAddress, setIpAddress] = useState("");
-  // console.log(ip);
   const initialData = async () => {
     const response = await fetch("https://api.ipregistry.co", {
       method: "GET",
       headers: {
-        Authorization: `ApiKey ${config.ip_registry_key}`,
+        Authorization: `ApiKey ${import.meta.env.VITE_ip_registry_Key}`,
       },
     });
     const data = await response.json();
@@ -35,7 +35,7 @@ function App() {
             `https://api.ipregistry.co?${ipAddress}`,{
               method: "GET",
               headers: {
-                Authorization: `ApiKey ${config.ip_registry_key}`,
+                Authorization: `ApiKey ${import.meta.env.VITE_ip_registry_Key}`,
               },
             }
           );
