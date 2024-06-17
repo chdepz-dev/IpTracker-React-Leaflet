@@ -4,7 +4,7 @@ import Map from "./components/Map";
 
 
 function App() {
-  console.log(import.meta.env.VITE_ip_registry_Key)
+
   const [ip, setIp] = useState(null);
   const [ipAddress, setIpAddress] = useState("");
   const initialData = async () => {
